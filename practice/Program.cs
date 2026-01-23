@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Versioning;
 using System.Text;
 using Microsoft.VisualBasic;
+using System.Collections;
 /*
 Console.WriteLine("What is your First name?");
 string first_name = Console.ReadLine();
@@ -222,23 +224,26 @@ void ShortMultiplicationTable(int n)
 
 ShortMultiplicationTable(5);*/
 
-var name = "Mark";
-var date = DateTime.Now;
 
-// Composite formatting:
-Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
-// String interpolation:
-Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
-// Both calls produce the same output that is similar to:
-// Hello, Mark! Today is Wednesday, it's 19:40 now.
+Queue<int> numeros = new Queue<int>();
 
+numeros.Enqueue(100);
+numeros.Enqueue(200);
+numeros.Enqueue(300);
+numeros.Enqueue(400);
+numeros.Enqueue(500);
+numeros.Enqueue(600);
+numeros.Enqueue(700);
+numeros.Enqueue(800);
 
-
-DateTime christmas = new DateTime(date.Year,12,25);
-
-
-if ( date < christmas)
+foreach (int n in numeros)
 {
-    Console.WriteLine(christmas);
+    Console.WriteLine(n);
 }
 
+int sacado = numeros.Dequeue();
+Console.WriteLine($"Acabamos de sacar:{sacado}");
+foreach (int n in numeros)
+{
+    Console.WriteLine(n);
+}
