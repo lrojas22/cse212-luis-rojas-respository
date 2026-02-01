@@ -25,6 +25,20 @@
     private static int CountDuplicates(int[] data)
     {
         // Add code here.
-        return 0;
+       var vistos = new HashSet<int>();
+       var ndup = 0;
+        int duplicados = 0;
+        foreach (int i in data)
+        {
+            if (vistos.Contains(i))
+                { duplicados ++;}
+             else{
+                vistos.Add(i) ;
+                ndup++;
+             }
+        }
+        Console.WriteLine($"Tenemos {duplicados} duplicados");
+         Console.WriteLine($"Tenemos {ndup} NO duplicados");
+        return duplicados;
     }
 }

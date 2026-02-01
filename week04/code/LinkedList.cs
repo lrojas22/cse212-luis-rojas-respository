@@ -1,5 +1,5 @@
 using System.Collections;
-
+using System.Diagnostics;
 public class LinkedList : IEnumerable<int>
 {
     private Node? _head;
@@ -32,7 +32,21 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public void InsertTail(int value)
     {
-        // TODO Problem 1
+        Node newNode = new(value);
+
+            // TODO Problem 1
+        if (_tail == null)
+        {
+            _head = newNode;
+            _tail = newNode;
+        }
+        else
+        {
+            newNode.Prev = _tail;
+            _tail.Next =  newNode;
+            _tail = newNode ;
+        }
+
     }
 
 
@@ -65,6 +79,15 @@ public class LinkedList : IEnumerable<int>
     public void RemoveTail()
     {
         // TODO Problem 2
+         if (_head == _tail)
+        {
+            _head = null;
+            _tail = null;
+        }else if (_tail is not null)
+        {
+            _tail.Prev!.Next = null;
+            _tail = _tail.Prev;
+        }
     }
 
     /// <summary>
@@ -108,6 +131,46 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public void Remove(int value)
     {
+       if (_head == null) return;
+       var current = _head;
+
+
+        while (current != null)
+        {
+            if (current.Data == value)
+            {
+                // Caso 1: único nodo
+            if (_head == _tail)
+            {
+                _head = null;
+                _tail = null;
+                return;
+            }
+             // Caso 2: eliminar head
+            if (current == _head)
+            {
+                RemoveHead();
+                return;
+            }
+
+            // eliminar tail
+            if (current ==_tail)
+            {
+                RemoveTail();
+                return;
+            }
+
+            //caso 4 nodo intermedio
+            current.Prev!.Next = current.Next;
+            current.Next!.Prev = current.Prev;
+            return;
+            }
+        current = current.Next;
+        }
+
+
+
+
         // TODO Problem 3
     }
 
@@ -116,6 +179,20 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public void Replace(int oldValue, int newValue)
     {
+
+        var current = _head;
+        while (current != null)
+       
+
+        {
+            if (current.Data == oldValue)
+            {
+                current.Data = newValue;
+            }
+            current = current.Next;
+        }
+
+
         // TODO Problem 4
     }
 

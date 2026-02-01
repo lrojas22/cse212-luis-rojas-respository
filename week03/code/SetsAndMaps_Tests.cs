@@ -330,17 +330,17 @@ public class MazeTests
 }
 
 [TestClass]
-public class EarthquakeDailySummaryTests
-{
-    [TestMethod]
-    public void EarthquakeDailySummary_Basic()
-    {
-        var result = SetsAndMaps.EarthquakeDailySummary();
-        Assert.IsTrue(result.Length > 5, "Too few earthquakes");
+                            public class EarthquakeDailySummaryTests
+                            {
+                                [TestMethod]
+                                public void EarthquakeDailySummary_Basic()
+                                {
+                                    var result = SetsAndMaps.EarthquakeDailySummary();
+                                    Assert.IsTrue(result.Length > 5, "Too few earthquakes");
 
-        foreach (string s in result)
-        {
-            Assert.IsTrue(s.Contains(" - Mag "), "String must contain a magnitude");
-        }
-    }
-}
+                                    foreach (string s in result)
+                                    {
+                                        Assert.IsTrue(s.Contains(" - Mag "), "String must contain a magnitude");
+                                    }
+                                }
+                            }

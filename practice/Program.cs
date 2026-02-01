@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
@@ -225,25 +225,97 @@ void ShortMultiplicationTable(int n)
 ShortMultiplicationTable(5);*/
 
 
+/*
 Queue<int> numeros = new Queue<int>();
 
-numeros.Enqueue(100);
-numeros.Enqueue(200);
-numeros.Enqueue(300);
-numeros.Enqueue(400);
-numeros.Enqueue(500);
-numeros.Enqueue(600);
-numeros.Enqueue(700);
-numeros.Enqueue(800);
+        // Enqueue
+        numeros.Enqueue(100);
+        numeros.Enqueue(200);
+        numeros.Enqueue(300);
+        numeros.Enqueue(400);
+        numeros.Enqueue(500);
+        numeros.Enqueue(600);
+        numeros.Enqueue(700);
+        numeros.Enqueue(800);
 
-foreach (int n in numeros)
-{
-    Console.WriteLine(n);
-}
+        // Proceso
+        while (numeros.Count > 0)
+        {
+            int sacado = numeros.Dequeue();
+            Console.WriteLine($"Acabamos de sacar: {sacado}");
 
-int sacado = numeros.Dequeue();
-Console.WriteLine($"Acabamos de sacar:{sacado}");
-foreach (int n in numeros)
+            if (numeros.Count > 0)
+            {
+                Console.WriteLine("Solo quedan: " + string.Join(", ", numeros));
+            }
+            else
+            {
+                Console.WriteLine("Solo quedan: ninguno");
+            }
+        }
+
+
+Console.WriteLine("___________________STACK_____________________________________________");
+Console.WriteLine("___________________STACK_____________________________________________");
+Console.WriteLine("___________________STACK_____________________________________________");
+         //SET
+      Stack<int> numeros2 = new Stack<int>();
+        numeros2.Push(100);
+        numeros2.Push(200);
+        numeros2.Push(300);
+        numeros2.Push(400);
+        numeros2.Push(500);
+        numeros2.Push(600);
+        numeros2.Push(700);
+        numeros2.Push(800);
+
+        // Proceso
+        while (numeros2.Count > 0)
+        {
+            int sacado1 = numeros2.Pop();
+            Console.WriteLine($"Acabamos de sacar: {sacado1}");
+
+            if (numeros2.Count > 0)
+            {
+                Console.WriteLine("Solo quedan: " + string.Join(", ", numeros2.Reverse()));
+            }
+            else
+            {
+                Console.WriteLine("Solo quedan: ninguno");
+            }
+        }
+
+        */
+
+public class Program
 {
-    Console.WriteLine(n);
+    static void Main(string[] args)
+    {
+        /*
+        Console.WriteLine(DicLearn.Traductor("Dog"));      // Perro
+        Console.WriteLine(DicLearn.Traductor("Cat"));      // Gato
+        Console.WriteLine(DicLearn.Traductor("Fish"));     // ???
+
+
+
+        LinkedList.Node();*/
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.AddLast('1');
+        list.AddLast('2');
+        list.AddLast('3');
+
+        list.Print();
+
+        list.AddFirst('0');
+        list.AddLast('4');
+
+        list.Print();
+    
+
+    }
 }
+       
+
+
