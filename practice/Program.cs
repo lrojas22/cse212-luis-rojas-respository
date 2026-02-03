@@ -291,29 +291,12 @@ public class Program
 {
     static void Main(string[] args)
     {
-        /*
-        Console.WriteLine(DicLearn.Traductor("Dog"));      // Perro
-        Console.WriteLine(DicLearn.Traductor("Cat"));      // Gato
-        Console.WriteLine(DicLearn.Traductor("Fish"));     // ???
+       
 
-
-
-        LinkedList.Node();*/
-
-        DoublyLinkedList list = new DoublyLinkedList();
-
-        list.AddLast('1');
-        list.AddLast('2');
-        list.AddLast('3');
-
-        list.Print();
-
-        list.AddFirst('0');
-        list.AddLast('4');
-
-        list.Print();
+    Recursion.sayHello(1);
     
-
+    int resultado = Recursion.Factorial(5);
+    Console.WriteLine(resultado);
     }
 }
        
