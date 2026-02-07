@@ -1,7 +1,7 @@
 public class DoublyLinkedList
 {
-    public Node Head;
-    public Node Tail;
+    public Node? Head;
+    public Node? Tail;
 
     public DoublyLinkedList()
     {
@@ -43,7 +43,7 @@ public class DoublyLinkedList
 
     public void Print()
     {
-        Node current = Head;
+        Node? current = Head;
 
         while (current != null)
         {

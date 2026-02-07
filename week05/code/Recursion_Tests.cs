@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // DO NOT MODIFY THIS FILE
@@ -9,6 +10,7 @@ public class SumSquaresRecursiveTests
     public void SumSquaresRecursive_Small()
     {
         var result = Recursion.SumSquaresRecursive(10);
+        Debug.WriteLine("esto debe salir:" + result);
         Assert.AreEqual(385, result);
     }
 
@@ -16,6 +18,7 @@ public class SumSquaresRecursiveTests
     public void SumSquaresRecursive_Large()
     {
         var result = Recursion.SumSquaresRecursive(100);
+        Debug.WriteLine("esto debe salir:" + result);
         Assert.AreEqual(338350, result);
     }
 }
@@ -114,13 +117,17 @@ public class CountWaysToClimbTests
     public void CountWaysToClimb_Medium()
     {
         var result = Recursion.CountWaysToClimb(20);
+        Debug.WriteLine("El resultado es: " + result);
         Assert.AreEqual(121415, result);
     }
 
     [TestMethod, Timeout(5000)]
     public void CountWaysToClimb_Large()
     {
+        
         var result = Recursion.CountWaysToClimb(100);
+        Debug.WriteLine($"Resultado obtenido = {result}");
+        Debug.WriteLine($"Resultado esperado = 180396380815100901214157639");
         Assert.AreEqual(180396380815100901214157639M, result);
     }
 }

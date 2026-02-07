@@ -18,6 +18,7 @@ using System.Runtime.Versioning;
 using System.Text;
 using Microsoft.VisualBasic;
 using System.Collections;
+using System.Numerics;
 /*
 Console.WriteLine("What is your First name?");
 string first_name = Console.ReadLine();
@@ -291,13 +292,31 @@ public class Program
 {
     static void Main(string[] args)
     {
-       
+       /*
 
     Recursion.sayHello(1);
     
-    int resultado = Recursion.Factorial(5);
+    BigInteger resultado = Recursion.Factorial(9);
     Console.WriteLine(resultado);
+
+
+    Console.WriteLine(Recursion.Fibonacci(1));   // 1
+    Console.WriteLine(Recursion.Fibonacci(2));   // 1
+    Console.WriteLine(Recursion.Fibonacci(3));   // 2
+    Console.WriteLine(Recursion.Fibonacci(4));   // 3
+    Console.WriteLine(Recursion.Fibonacci(10));  // 55
+    Console.WriteLine(Recursion.Fibonacci(90));  // 2880067194370816120 (This one will
+                                   // not work if you do not have the
+                                   // `remember` dictionary implemented).
+        Recursion.Permutations("ABCD");
+        Console.WriteLine(Recursion.BinarySearch(new[]{1, 3, 6, 18, 20, 25, 34, 38, 89, 95, 99, 100}, 1));  // true
+        Console.WriteLine(Recursion.BinarySearch(new[]{1, 3, 6, 18, 20, 25, 34, 38, 89, 95, 99, 100}, 89)); // true
+        Console.WriteLine(Recursion.BinarySearch(new[]{1, 3, 6, 18, 20, 25, 34, 38, 89, 95, 99, 100}, 17)); // false
+*/
+        Console.WriteLine(Recursion.Sum(178));
     }
+    
+
 }
        
 
