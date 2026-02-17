@@ -313,7 +313,19 @@ public class Program
         Console.WriteLine(Recursion.BinarySearch(new[]{1, 3, 6, 18, 20, 25, 34, 38, 89, 95, 99, 100}, 89)); // true
         Console.WriteLine(Recursion.BinarySearch(new[]{1, 3, 6, 18, 20, 25, 34, 38, 89, 95, 99, 100}, 17)); // false
 */
-        Console.WriteLine(Recursion.Sum(178));
+        //Console.WriteLine(Recursion.Sum(178));
+
+        var tree = new BinarySearchTree();
+
+        int [] numbers = {50, 30, 70, 20, 40, 60, 80 };
+
+        foreach (var i in numbers)
+        {
+            tree.Insert(i);    
+        }   
+        tree.PrintInOrder();
+     
+        
     }
     
 
